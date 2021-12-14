@@ -30,23 +30,27 @@
   
   <div class="content" role="main">
 	  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-  <div class="card" *ngFor="let post of posts">
-	<button (click)="theFunction()">
-		<h1>{{post.country}}</h1>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<h1 class="main title">COVID-19 Daily Documentation</h1>
+		<div class="facts">
+
+			<div class="card" *ngFor="let post of posts">
+				<button (click)="theFunction()">
+					<h1>{{post.country}}</h1>
+					
+				</button>
+				
+				<p class="title" id="day" *ngIf="showCard">Last updated {{post.day}}</p>
+				<p id="new" *ngIf="showCard">New cases today {{post.cases.new}}</p>
+				<p id="critical" *ngIf="showCard">Cases at critical stage {{post.cases.critical}}</p>
+				<p id="recovered"*ngIf="showCard">Number of people that have recovered is {{post.cases.recovered}}</p>
+				<p id="population" *ngIf="showCard">Total Population {{post.population}}</p>
+				<p></p>
 		
-	</button>
-	
-	<p class="title" id="day" *ngIf="showCard">Last updated {{post.day}}</p>
-	<p id="new" *ngIf="showCard">New cases today {{post.cases.new}}</p>
-	<p id="critical" *ngIf="showCard">Cases at critical stage {{post.cases.critical}}</p>
-	<p id="recovered"*ngIf="showCard">Number of people that have recovered is {{post.cases.recovered}}</p>
-	<p id="population" *ngIf="showCard">Total Population {{post.population}}</p>
-	<p></p>
-	
-	
-  </div>
+		
+			  </div>
+		</div>
+		
   
   </div>
   
